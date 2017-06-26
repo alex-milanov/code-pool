@@ -1,5 +1,5 @@
 {
-  "name": "ui-boilerplate",
+  "name": "code-pool",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,8 +14,8 @@
     "livereload": "livereload dist/**/*.css -d",
     "start": "npm run build && serve --path dist & npm run watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Alex Milanov, Ned Daze",
+  "license": "MIT",
   "dependencies": {
     "bourbon": "^4.2.7",
     "bourbon-neat": "^1.8.0",
