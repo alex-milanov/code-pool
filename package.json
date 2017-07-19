@@ -13,7 +13,7 @@
     "watch:sass": "npm run build:sass -- --watch src/sass/**/*",
     "livereload": "livereload dist/**/*.css -d",
     "start": "npm run build && serve --path dist & npm run watch",
-		"sync:gh": "git checkout gh-pages && git rebase master && git push && git checkout master"
+    "sync:gh": "git checkout gh-pages && git rebase master && git push && git checkout master"
   },
   "author": "Alex Milanov, Ned Daze",
   "license": "MIT",
