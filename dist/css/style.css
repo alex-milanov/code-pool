@@ -2400,8 +2400,9 @@ body, input, button, h1, h2, h3, h4 {
     padding: 0px;
     display: inline-block;
     box-sizing: border-box;
-    height: 48px;
-    line-height: 48px;
+    height: 52px;
+    line-height: 52px;
+    padding: 4px 10px 0px 10px;
     display: block;
     width: 100%;
     margin-bottom: 30px;
@@ -2416,7 +2417,7 @@ body, input, button, h1, h2, h3, h4 {
       line-height: 48px;
       margin: 0px 7px; }
     #ui header h1 {
-      font-size: 18px; }
+      font-size: 20px; }
     #ui header .add-pool {
       margin: 0px;
       padding: 0px;
@@ -2433,14 +2434,52 @@ body, input, button, h1, h2, h3, h4 {
         height: 32px;
         line-height: 32px;
         padding: 0px 7px;
-        margin: 0px 1px;
+        margin: 0px 2px;
         float: left;
         border: 0px;
         font-size: 14px;
-        box-shadow: 1px 1px 1px #ccc;
-        background: #eee;
+        box-shadow: 1px 1px 2px 0px #ccc, inset 1px 1px 7px #eee;
+        background: #f5f5f5;
         outline: none; }
       #ui header .add-pool input {
-        background: #f5f5f5; }
+        background: #fafafa; }
+      #ui header .add-pool button {
+        cursor: pointer; }
+        #ui header .add-pool button:hover {
+          background: #eee; }
+  #ui ul.pools {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 7px;
+    width: 100%; }
+    #ui ul.pools li {
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: -1px -1px 1px #eee, 1px 1px 1px #ccc, 7px 7px 3px #f5f5f5;
+      cursor: pointer; }
+      @media (min-width: 1024px) {
+        #ui ul.pools li {
+          margin: 0.3em;
+          width: 32.6%; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        #ui ul.pools li {
+          margin: 0.3em;
+          width: 48.7%; } }
+      @media (min-width: 480px) and (max-width: 767px) {
+        #ui ul.pools li {
+          margin: 0.3em 0px;
+          width: 100%; } }
+  #ui .content {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
