@@ -2,8 +2,8 @@
 
 // dom
 const {
-	section, button, span,
-	form, h1, input, a, ul, li
+	section, button, span, header,
+	form, h1, input, a, ul, li, i
 } = require('iblokz-snabbdom-helpers');
 
 const formToData = form => Array.from(form.elements)
@@ -15,20 +15,35 @@ const clearForm = form => Array.from(form.elements)
     .forEach(el => (el.value = null));
 
 module.exports = ({state, actions}) => section('#ui', [
-	h1('Code Pool'),
-	form('.add-pool', {
-		on: {
-			submit: ev => {
-				ev.preventDefault();
-				const data = formToData(ev.target);
-				actions.pools.add(data);
-				clearForm(ev.target);
+	header([
+		h1('Code Pool'),
+		form('.right.add-pool', {
+			on: {
+				submit: ev => {
+					ev.preventDefault();
+					const data = formToData(ev.target);
+					actions.pools.add(data);
+					clearForm(ev.target);
+				}
 			}
-		}
-	}, [
-		input('[type="text"][name="title"]')
+		}, [].concat(
+			state.addPoolForm && [
+				input('[type="text"][name="title"]'),
+				button('[type="submit"]', 'Save')
+			] || [],
+			button('[type="button"]', {
+				on: {
+					click: () => actions.toggle('addPoolForm')
+				}
+			}, !state.addPoolForm
+				? [i('.fa.fa-plus'), ' Start a project']
+				: 'Cancel'
+			)
+		))
 	]),
-	ul('.pools', state.pools.list.map(pool =>
-        li('.pool', pool.title)
+	section('.content', [
+		ul('.pools', state.pools.list.map(pool =>
+      li('.pool', pool.title)
     ))
+	])
 ]);
